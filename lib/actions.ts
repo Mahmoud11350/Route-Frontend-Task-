@@ -19,7 +19,7 @@ export const createNewTransaction = async (id: String, formData: FormData) => {
   const transaction = await prisma.transaction.create({
     data: {
       amount: Number(amount),
-      customerId: Number(id),
+      customerId: id,
       date: new Date(Date.now()),
     },
   });

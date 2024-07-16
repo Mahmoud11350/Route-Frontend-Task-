@@ -8,10 +8,10 @@ import { ChartsData } from "@/lib/Types";
 import moment from "moment";
 import Link from "next/link";
 
-export default async function Customer({ params }: { params: { id: Number } }) {
+export default async function Customer({ params }: { params: { id: string } }) {
   const customer = await prisma.customer.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
     include: {
       transaction: true,

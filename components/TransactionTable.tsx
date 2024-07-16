@@ -15,7 +15,7 @@ import Link from "next/link";
 const TransactionTable = async ({ id }: { id: Number }) => {
   const transactions = await prisma.transaction.findMany({
     where: {
-      customerId: Number(id),
+      customerId: id,
     },
     include: {
       customer: true,

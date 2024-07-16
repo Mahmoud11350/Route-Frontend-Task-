@@ -11,7 +11,7 @@ const CustomerLayout = async ({
 }) => {
   const customer = await prisma.customer.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
   });
   return (
