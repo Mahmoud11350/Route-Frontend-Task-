@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import prisma from "@/db/prisma";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const CustomerLayout = async ({
@@ -21,7 +22,9 @@ const CustomerLayout = async ({
           <h2 className="text-lg font-bold uppercase text-mainColor ">
             {customer?.name}
           </h2>
-          <Button>Add New Transction</Button>
+          <Link href={`/customer/${params.id}`}>
+            <Button>Add New Transction</Button>
+          </Link>
         </div>
       </section>
       {children}

@@ -55,9 +55,11 @@ const DataTable = async () => {
                   </TableCell>
                   <TableCell className="text-right">
                     <Link href={`/customer/${customer.id}`} className="block">
-                      {customer.transaction
-                        .map((item) => item.amount)
-                        .reduce((acc, current) => acc + current)}
+                      {customer.transaction.length > 0
+                        ? customer.transaction
+                            .map((item) => item.amount)
+                            .reduce((acc, current) => acc + current)
+                        : "0"}
                     </Link>
                   </TableCell>
                 </TableRow>

@@ -5,7 +5,7 @@ import BarChartComponent from "./BarCharts";
 import { Button } from "./ui/button";
 import { type ChartsData } from "@/lib/Types";
 
-const Charts = ({ chartData }: { chartData: ChartsData[] }) => {
+const Charts = ({ chartData }: { chartData: any }) => {
   const [areaCharts, setAreaCharts] = useState(true);
   return (
     <section className="text-center">
