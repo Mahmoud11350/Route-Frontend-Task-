@@ -6,20 +6,20 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Customer  {
- id Int @id   @default(autoincrement())
+ id  String  @id @default(auto()) @map("_id") @db.ObjectId
  name String @unique
  transaction Transaction[]
 }
 
 model Transaction {
- id Int @id   @default(autoincrement())
+ id String  @id @default(auto()) @map("_id") @db.ObjectId
   customer   Customer   @relation(fields: [customerId], references: [id])
-  customerId Int    
+  customerId String @db.ObjectId  
   date DateTime
   amount Int
 }
