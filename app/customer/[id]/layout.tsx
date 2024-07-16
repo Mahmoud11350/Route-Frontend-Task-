@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import prisma from "@/db/prisma";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
 const CustomerLayout = async ({
   children,
