@@ -13,7 +13,7 @@ export const createNewUser = async (formData: FormData) => {
   redirect("/");
 };
 
-export const createNewTransaction = async (id: String, formData: FormData) => {
+export const createNewTransaction = async (id: string, formData: FormData) => {
   const amount = formData.get("amount");
   if (Number(amount) === 0) return;
   const transaction = await prisma.transaction.create({

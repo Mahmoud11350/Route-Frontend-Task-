@@ -7,7 +7,7 @@ const CustomerLayout = async ({
   params,
 }: {
   children: React.ReactNode;
-  params: { id: String };
+  params: { id: string };
 }) => {
   const customer = await prisma.customer.findUnique({
     where: {

@@ -12,7 +12,7 @@ import moment from "moment";
 
 import Link from "next/link";
 
-const TransactionTable = async ({ id }: { id: Number }) => {
+const TransactionTable = async ({ id }: { id: string }) => {
   const transactions = await prisma.transaction.findMany({
     where: {
       customerId: id,
