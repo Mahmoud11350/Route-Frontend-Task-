@@ -1,3 +1,4 @@
+'use server'
 import {
   Table,
   TableBody,
@@ -10,7 +11,6 @@ import {
 import prisma from "@/db/prisma";
 import moment from "moment";
 
-import Link from "next/link";
 
 const TransactionTable = async ({ id }: { id: string }) => {
   const transactions = await prisma.transaction.findMany({

@@ -1,3 +1,4 @@
+'use server'
 import DataTable from "@/components/DataTable";
 import TotalCards from "@/components/TotalCards";
 import { Button } from "@/components/ui/button";
@@ -5,9 +6,9 @@ import prisma from "@/db/prisma";
 import { Link } from "lucide-react";
 
 export default async function Home() {
-  const customers = await prisma.customer.count();
+  const customers = await prisma.customer.findMany();
 
-  if (customers === 0) {
+  if (customers.length === 0) {
     return (
       <div className="mt-6">
         <h1 className="mb-6">NO User Created Yet</h1>

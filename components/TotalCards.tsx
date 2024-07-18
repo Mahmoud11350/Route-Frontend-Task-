@@ -6,13 +6,13 @@ import { GrTransaction } from "react-icons/gr";
 const TotalCards = async () => {
   const customers = await prisma.customer.count();
   const transactionsCount = await prisma.transaction.count();
-  const transaction = await prisma.transaction.findMany();
+
   const totalAmount = await prisma.transaction.aggregate({
     _sum: {
       amount: true,
     },
   });
-  console.log(totalAmount);
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-4 wrapper">
       <div className="bg-white p-4 rounded-lg ">

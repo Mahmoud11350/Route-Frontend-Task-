@@ -1,10 +1,8 @@
-import AreaChartComponent from "@/components/AreaCharts";
-import BarChartComponent from "@/components/BarCharts";
+'use server'
 import Charts from "@/components/Charts";
 import TransactionTable from "@/components/TransactionTable";
 import { Button } from "@/components/ui/button";
 import prisma from "@/db/prisma";
-import { ChartsData } from "@/lib/Types";
 import moment from "moment";
 import Link from "next/link";
 

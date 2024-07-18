@@ -23,6 +23,6 @@ export const createNewTransaction = async (id: string, formData: FormData) => {
       date: new Date(Date.now()),
     },
   });
-  revalidatePath("/", "layout");
-  redirect("/");
+  await revalidatePath("/", "layout");
+ return redirect("/");
 };
