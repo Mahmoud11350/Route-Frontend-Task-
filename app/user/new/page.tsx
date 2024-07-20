@@ -1,3 +1,4 @@
+import ButtonSubmit from "@/components/ButtonSubmit";
 import { Button } from "@/components/ui/button";
 
 import { Input } from "@/components/ui/input";
@@ -13,7 +14,7 @@ const NewUser = () => {
       <Label>User Name</Label>
       <h1>This is your public display name.</h1>
       <Input name="userName" />
-      <Button type="submit">Submit</Button>
+      <ButtonSubmit type="Add User" />
     </form>
   );
 };

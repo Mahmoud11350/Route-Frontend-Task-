@@ -1,6 +1,7 @@
 'use server'
+import ButtonSubmit from "@/components/ButtonSubmit";
 import { DatePickerDemo } from "@/components/DatePicker";
-import { Button } from "@/components/ui/button";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createNewTransaction } from "@/lib/actions";
@@ -15,7 +16,7 @@ const NewTransaction = ({ params }: { params: { id: string } }) => {
       <Label>Transaction Amont</Label>
       <Input name="amount" type="number" />
       <DatePickerDemo  />
-      <Button type="submit">Add Transaction</Button>
+      <ButtonSubmit type="Add Transaction"/>
     </form>
   );
 };
