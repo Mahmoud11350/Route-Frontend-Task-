@@ -24,7 +24,7 @@ export const createNewTransaction = async (id: string, formData: FormData) => {
     data: {
       amount: Number(amount),
       customerId: id,
-      date: new Date(date)  ,
+      date: new Date(date) || Date.now()  ,
     },
   });
  revalidatePath("/", "layout");
