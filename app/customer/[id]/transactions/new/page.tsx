@@ -14,7 +14,7 @@ const NewTransaction = ({ params }: { params: { id: string } }) => {
     >
       <Label>Transaction Amont</Label>
       <Input name="amount" type="number" />
-      <DatePickerDemo />
+      <DatePickerDemo  />
       <Button type="submit">Add Transaction</Button>
     </form>
   );

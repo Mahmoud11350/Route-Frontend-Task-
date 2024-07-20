@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const createNewUser = async (formData: FormData) => {
+
   const user = await prisma.customer.create({
     data: {
       name: formData.get("userName") as string,
@@ -14,15 +15,18 @@ export const createNewUser = async (formData: FormData) => {
 };
 
 export const createNewTransaction = async (id: string, formData: FormData) => {
+  const date = formData.get("date") as any
   const amount = formData.get("amount");
-  if (Number(amount) === 0) return;
-  const transaction = await prisma.transaction.create({
+
+  if (Number(amount) === 0 || date == undefined || date == null) return;
+
+    await prisma.transaction.create({
     data: {
       amount: Number(amount),
       customerId: id,
-      date: new Date(Date.now()),
+      date: new Date(date)  ,
     },
   });
-  await revalidatePath("/", "layout");
+ revalidatePath("/", "layout");
  return redirect("/");
 };
